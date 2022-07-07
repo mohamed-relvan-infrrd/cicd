@@ -1,0 +1,15 @@
+#!/usr/bin/env groovy
+
+// Example Jenkinsfile using the pipeline shared library
+
+@Library('polaris-cicd') _
+
+continuousIntegrationJavaPipeline(
+        appExecutableJar: 'filehandler-0.1',
+        appName: 'file-handler',
+        appPort: 8500,
+        appSpringProfile: 'profile name',
+        dockerImageName: 'file-handler',
+        ecrRegistry: '592754518446.dkr.ecr.us-west-2.amazonaws.com',
+        slackChannel: '#infrrd-signals',
+        )
