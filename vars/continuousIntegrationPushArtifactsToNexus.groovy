@@ -21,7 +21,7 @@ def call(Map<String,String> pipeargs) {
             DOCKER_BUILD_TAG = BUILD_TAG.replaceAll('%2F', '-')  // replace urlencoded slash with a dash
             SHA_TAG = "${GIT_BRANCH}-${GIT_SHA}"
             MAVEN_CONFIG = "${WORKSPACE}/m2"
-            NEXUS_CREDENTIAL_ID = "nexus",
+            NEXUS_CREDENTIAL_ID = "nexus"
         }
         stages{
             stage('MavenBuild') {
